@@ -109,7 +109,9 @@ STAGEPROJECT: HTML headings
     - `document.querySelector("h1") !== null`
 - **Example(s)**:
     - `index.html`: A page with a main topic and two subtopics using `<h2>`, one sub-subtopic using `<h3>`
+        
 - **Notes**: `<section>` tags allowed to group logical units with headings
+    
 
 ---
 
@@ -328,49 +330,8 @@ STAGEPROJECT: HTML headings
 
 ---
 
-### [Intermediate] — Problem 9: Fix a Skipped Heading Level
 
-- **Statement**: Correct an HTML where `<h1>` is followed by `<h4>`
-    
-- **Input**: HTML snippet
-    
-- **Expected output**: Proper intermediate heading levels added
-    
-- **Constraints**: Do not remove any content
-    
-- **Example**: see input
-    
-- **Acceptance tests**:
-    
-    - `<h2>` and `<h3>` inserted appropriately
-        
-    - No skipped levels remain
-        
-
----
-
-### [Intermediate] — Problem 10: Reorder Headings in a Document
-
-- **Statement**: Given headings out of order, restructure them semantically
-    
-- **Input**: HTML file with random heading levels
-    
-- **Expected output**: Clean, hierarchical heading flow
-    
-- **Constraints**: Use only original text content
-    
-- **Example**: Input contains `<h1>`, `<h5>`, `<h3>`
-    
-- **Acceptance tests**:
-    
-    - Headings ordered by level
-        
-    - Validation passes
-        
-
----
-
-### [Intermediate] — Problem 11: Add Headings to Article Sections
+### [Intermediate] — 9.problem_9_Add headings_to_article_sections
 
 - **Statement**: Given sections of an article, apply appropriate headings
     
@@ -389,7 +350,7 @@ STAGEPROJECT: HTML headings
 
 ---
 
-### [Intermediate] — Problem 12: Convert Div Labels to Headings
+### [Intermediate] — 10.problem_10: convert_div_labels_to_headings
 
 - **Statement**: Replace `<div class="section-title">` with semantic headings
     
@@ -408,7 +369,7 @@ STAGEPROJECT: HTML headings
 
 ---
 
-## ⚙️ 3. Debugging & Refactor Challenge
+## ⚙️ 3. debugging_and_refactor_ challenge
 
 **Chosen count: 2 — one with incorrect order and one with repeated headings. These represent common, realistic structural mistakes in heading usage.**
 
