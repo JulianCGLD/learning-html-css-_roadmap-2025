@@ -1,0 +1,10 @@
+git status
+git add .
+git commit -m "mensaje"
+git pull origin main
+Commands for git_hub
+
+It's important to know, that if you want to know what are my explanations you have to
+Download obsidian
+After that install the plugin Excalidraw
+And move the explanation markdown file to that folder

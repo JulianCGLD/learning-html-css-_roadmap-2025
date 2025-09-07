@@ -1,0 +1,290 @@
+DOCTYPE
+
+---
+
+\[\[Project title]]
+DOCTYPE - Practice Pack
+
+---
+
+\[\[1.1 Practice evey Day]]
+
+## 📝 Description
+
+This pack ensures complete mastery of the `<!DOCTYPE html>` declaration, its required syntax, and placement at the beginning of HTML5 documents.
+
+## 🔧 Functional Requirements Implemented
+
+* [x] Correct syntax for HTML5 DOCTYPE
+* [x] Placement as the first line in the file
+* [x] Validation via W3C validator
+* [x] Quirks mode triggered when omitted or malformed
+
+## 🌟 Stretch Goals (Optional)
+
+* [ ] Compare behavior of valid and invalid DOCTYPE using `document.compatMode`
+
+## ⏱ Time Log
+
+Estimated: 20 minutes
+Actual: TBD
+
+## 📚 Concepts Practiced
+
+* DOCTYPE declaration syntax
+* Structural validation of HTML5 documents
+* Positional requirements for DOCTYPE
+* Basic rendering mode behavior
+
+## 📌 Notes
+
+All examples include minimal required wrapper tags (`html`, `head`, `body`) to ensure the document can be tested and validated.
+
+---
+
+STAGEPROJECT: DOCTYPE
+
+## **Stage**: DOCTYPE
+
+## 🎓 Learning Objectives
+
+* Use the exact syntax `<!DOCTYPE html>` at the start of HTML5 documents.
+* Validate that a document with a DOCTYPE passes W3C HTML5 validation.
+* Detect validation failure or rendering mode changes when DOCTYPE is malformed or missing.
+* Ensure DOCTYPE is the first non-whitespace line of the file.
+* Identify browser rendering behavior using `document.compatMode`.
+
+---
+
+## 🧪 1. Microproject Set (choose count and justify)
+
+Number of microprojects chosen: 3 — DOCTYPE is a single declaration with strict placement and format; three focused tasks are sufficient to fully cover syntax, position, and error detection.
+
+---
+
+```
+1. Name — Basic HTML5 DOCTYPE
+   - **Files**: index.html  
+   - **Input**: none  
+   - **Expected output / rendered result**: Valid HTML5 file that passes W3C validation and renders in standards mode  
+   - **Constraints**: Must use only `<!DOCTYPE html>` as the first line, followed by minimal structural tags  
+   - **Acceptance tests**:  
+     - DOCTYPE must match `/^<!DOCTYPE html>$/i`  
+     - W3C validator returns zero errors  
+   - **Example(s)**:  
+     - Input: file starts with `<!DOCTYPE html>` followed by minimal tags  
+   - **Notes**: Wrapper tags are required to allow full document structure validation
+```
+
+```
+2. Name — Detect invalid DOCTYPE casing
+   - **Files**: index.html  
+   - **Input**: File using `<!doctype HTML>` (mixed casing)  
+   - **Expected output / rendered result**: Should still validate correctly, as DOCTYPE is case-insensitive  
+   - **Constraints**: Only casing may vary; structure must otherwise be valid  
+   - **Acceptance tests**:  
+     - DOCTYPE exists and matches `/^<!doctype html>$/i`  
+     - W3C validator returns zero errors  
+   - **Example(s)**:  
+     - Input: `<!dOcTyPe hTmL>` on line 1  
+   - **Notes**: Casing variation shows parser tolerance for letter case
+```
+
+```
+3. Name — Trigger validation failure with malformed DOCTYPE
+   - **Files**: index.html  
+   - **Input**: DOCTYPE line with typo, such as `<!DOC html>`  
+   - **Expected output / rendered result**: Validator fails; browser may enter quirks mode  
+   - **Constraints**: Must include a malformed or incomplete DOCTYPE  
+   - **Acceptance tests**:  
+     - W3C validator must return at least one error related to DOCTYPE  
+     - `document.compatMode !== "CSS1Compat"` in browser console  
+   - **Example(s)**:  
+     - Input: `<!DOC html>`  
+   - **Notes**: Minimal valid structure still required for full validation
+```
+
+---
+
+## 🧠 2. Applied Problem Set (choose counts and justify)
+
+Total problems chosen: 8 — \[justification: DOCTYPE is syntactically simple but critical; 6 basic problems cover fundamentals and 2 intermediate tasks address validation failure and browser behavior.]
+
+---
+
+
+### \[Basic] — Problem 1: Position test
+
+* **Statement**: Validate a file where DOCTYPE appears after `<html>`
+* **Input**: HTML file with DOCTYPE not as the first line
+* **Expected output**: File fails validation
+* **Constraints**: DOCTYPE must not be placed after any HTML tag or comment
+* **Example**:
+
+  * Input: DOCTYPE after `<html>`
+* **Acceptance tests**:
+
+  * W3C validator returns error
+  * `document.doctype === null`
+
+---
+
+### \[Basic] — Problem 2: Add whitespace before DOCTYPE
+
+* **Statement**: Add a newline or comment before the DOCTYPE
+* **Input**: File with `<!DOCTYPE html>` not at the very start
+* **Expected output**: File fails validation
+* **Constraints**: DOCTYPE must be the first non-whitespace line
+* **Example**:
+
+  * Input: `<!-- comment -->` before DOCTYPE
+* **Acceptance tests**:
+
+  * W3C validator returns error
+  * `document.doctype === null`
+
+---
+
+### \[Basic] — 3.problem_add_incorrect_legacy_DOCTYPE
+
+* **Statement**: Replace HTML5 DOCTYPE with an outdated HTML 4.01 transitional DOCTYPE
+* **Input**: HTML file starting with `<!DOCTYPE HTML PUBLIC ...>`
+* **Expected output**: Still renders, but not considered valid HTML5
+* **Constraints**: Use only transitional legacy DOCTYPE
+* **Example**:
+
+  * Input: old DTD string
+* **Acceptance tests**:
+
+  * W3C validator shows non-HTML5 mode
+  * `document.compatMode === "CSS1Compat"`
+
+---
+
+### \[Basic] — Problem 4: Add duplicate DOCTYPEs
+
+* **Statement**: Insert two DOCTYPE declarations at the start of the file
+* **Input**: File with `<!DOCTYPE html>` repeated
+* **Expected output**: Validator rejects the file
+* **Constraints**: Must not remove duplicate
+* **Example**:
+
+  * Input: two identical DOCTYPEs
+* **Acceptance tests**:
+
+  * W3C validator flags multiple DOCTYPEs
+  * `document.doctype.name === "html"` for first only
+
+---
+
+### \[Intermediate] — Problem 5: Validate case-insensitive DOCTYPE
+
+* **Statement**: Use varied casing for the DOCTYPE keyword
+* **Input**: `<!dOcTyPe hTmL>`
+* **Expected output**: Validation still passes
+* **Constraints**: Only change letter casing
+* **Example**:
+
+  * Input: mixed-case DOCTYPE
+* **Acceptance tests**:
+
+  * W3C validator shows 0 errors
+  * `document.doctype.name.toLowerCase() === "html"`
+
+---
+
+## ⚙️ 3. Debugging & Refactor Challenge
+
+Chosen count: 2 — These represent the most common real-world DOCTYPE errors and fix strategies.
+
+---
+
+**Broken code 1:**
+
+```html
+<html>
+  <!-- DOCTYPE is missing -->
+  <head><title>No Doctype</title></head>
+  <body>Test content</body>
+</html>
+```
+
+* **Bug list**:
+
+  1. No DOCTYPE declaration
+  2. Page will render in quirks mode
+
+* **Required fix:**
+
+```html
+<!DOCTYPE html>
+<html>
+  <head><title>No Doctype</title></head>
+  <body>Test content</body>
+</html>
+```
+
+* **Refactor notes**:
+
+  * Always place DOCTYPE on line 1
+  * Ensure no characters precede it
+  * Use validator to confirm standards mode
+
+---
+
+**Broken code 2:**
+
+```html
+<!-- comment -->
+<!DOCTYPE html>
+<html>
+  <head><title>Bad Position</title></head>
+  <body>Test</body>
+</html>
+```
+
+* **Bug list**:
+
+  1. Comment precedes DOCTYPE
+  2. DOCTYPE is not first line
+  3. Validation may fail or trigger quirks mode
+
+* **Required fix:**
+
+```html
+<!DOCTYPE html>
+<html>
+  <head><title>Bad Position</title></head>
+  <body>Test</body>
+</html>
+```
+
+* **Refactor notes**:
+
+  * No whitespace or comments should appear before DOCTYPE
+  * Always validate structure
+  * Keep DOCTYPE clean and on top
+
+---
+
+## ✅ Final Validation Checklist
+
+* [ ] All DOCTYPE declarations use `<!DOCTYPE html>` exactly
+* [ ] DOCTYPE appears as the first line in every file
+* [ ] W3C validator returns no errors where required
+* [ ] `document.compatMode === "CSS1Compat"` is true for correct DOCTYPE
+* [ ] `document.doctype.name === "html"`
+* [ ] No comments or whitespace precede DOCTYPE
+
+---
+
+## 📌 Grading rubric
+
+| Criteria      | Points | Description                                       |
+| ------------- | ------ | ------------------------------------------------- |
+| Correctness   | 0–40   | Proper syntax and placement of DOCTYPE            |
+| Semantics     | 0–30   | Clean structure and adherence to HTML5 rules      |
+| Accessibility | 0–20   | Standards mode rendering for best browser support |
+| Tests         | 0–10   | Validator checks and compatibility confirmation   |
+
+---

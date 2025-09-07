@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    !<DOCTYPE html> <!-- What happens when there are duplicate DOCTYPE declarations?
+    This is incorrect as there should only be one DOCTYPE declaration at the very beginning of the document. -->
+</body>
+</html>
+
+<!-- Error: Element doctype not allowed as child of element body in this context. (Suppressing further errors from this subtree.)
+
+From line 9, column 6; to line 9, column 19
+
+ody>↩    !<DOCTYPE html> <!-- 
+
+Content model for element body:
+Flow content.
+Error: End tag for body seen, but there were unclosed elements.
+
+From line 11, column 1; to line 11, column 7
+
+ment. -->↩</body>↩</htm
+
+Error: Unclosed element doctype.
+
+From line 9, column 6; to line 9, column 19
+
+ody>↩    !<DOCTYPE html> 
