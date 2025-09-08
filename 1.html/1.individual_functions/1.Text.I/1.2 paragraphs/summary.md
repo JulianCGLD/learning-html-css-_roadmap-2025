@@ -369,7 +369,7 @@ Focused solely on `<p>` element usage. No styling or scripting introduced. Wrapp
 
 ---
 
-### [Intermediate] — Problem 10: Paragraph with Nested Emphasis
+### [Intermediate] — 10.problem_10_paragraph_with_nested Emphasis
 
 - **Statement**: Nest `<em>` inside `<strong>` within a paragraph
     
