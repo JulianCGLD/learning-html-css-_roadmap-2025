@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Form Example</title>
+</head>
+<body>
+    <form action="/submit" method="post">
+        <fieldset>
+            <legend>Account Details</legend>
+            <label for="nickname">Nickname:</label>
+            <input type="text" id="nickname" name="nickname" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferences</legend>
+            <p>Choose your subscription plan:</p>
+            <input type="radio" id="basic" name="plan" value="basic" checked>
+            <label for="basic">Basic</label><br>
+
+            <input type="radio" id="premium" name="plan" value="premium">
+            <label for="premium">Premium</label><br>
+
+            <label for="interests">Select your interests:</label><br>
+            <input type="checkbox" id="coding" name="interests" value="coding">
+            <label for="coding">Coding</label><br>
+            <input type="checkbox" id="music" name="interests" value="music">
+            <label for="music">Music</label><br>
+            <input type="checkbox" id="sports" name="interests" value="sports">
+            <label for="sports">Sports</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Additional Info</legend>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob"><br>
+
+            <label for="bio">Short Bio:</label><br>
+            <textarea id="bio" name="bio" rows="4" cols="40"></textarea>
+        </fieldset>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
