@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Buena Mesa — Restaurant</title>
+  <meta name="description" content="Discover our menu and order your favorite dishes online. Easy registration for users and admins.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">La Buena Mesa</div>
+      <ul class="nav-links">
+        <li><a href="#products">Menu</a></li>
+        <li><a href="#register">Register</a></li>
+        <li><a href="#order">Request Order</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Welcome to La Buena Mesa</h1>
+      <p>Fresh dishes, made easy to order.</p>
+      <a href="#products" class="btn-primary">View Menu</a>
+    </section> 
+
+<!-- Explain me every part of hero-->
+
+    <!-- PRODUCTS -->
+    <section id="products" class="products">
+      <h2>Our Menu</h2>
+      <div class="product-grid">
+        <article class="product-card">
+          <img src="images/pasta.jpg" alt="Homemade Pasta">
+          <h3>Homemade Pasta</h3>
+          <p>Fresh pasta with tomato basil sauce.</p>
+          <button class="btn-secondary">Request</button>
+        </article>
+        <article class="product-card">
+          <img src="images/pizza.jpg" alt="Wood-fired Pizza">
+          <h3>Wood-fired Pizza</h3>
+          <p>Classic Margherita with fresh mozzarella.</p>
+          <button class="btn-secondary">Request</button>
+        </article>
+        <!-- Add more product cards as needed -->
+      </div>
+    </section>
+
+    <!-- REGISTER -->
+    <section id="register" class="register">
+      <h2>Register</h2>
+      <form class="register-form">
+        <label for="role">I am a:</label>
+        <select id="role" name="role" required>
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+        </select>
+
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" required>
+
+        <button type="submit" class="btn-primary">Register</button>
+      </form>
+    </section>
+
+    <!-- ORDER REQUEST -->
+    <section id="order" class="order">
+      <h2>Request Your Order</h2>
+      <form class="order-form">
+        <label for="dish">Choose Dish</label>
+        <select id="dish" required>
+          <option value="pasta">Homemade Pasta</option>
+          <option value="pizza">Wood-fired Pizza</option>
+        </select>
+
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" min="1" value="1" required>
+
+        <button type="submit" class="btn-primary">Submit Request</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 La Buena Mesa — All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

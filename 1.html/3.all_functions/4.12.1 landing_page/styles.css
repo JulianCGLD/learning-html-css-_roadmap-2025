@@ -1,0 +1,851 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+
+/* Contenedor principal para limitar ancho */
+.container {
+  max-width: 1200px;  /* ancho máximo */
+  margin: 0 auto;     /* centrar horizontalmente */
+  padding: 0 20px;    /* padding lateral para móviles */
+}
+
+/* header */
+
+.header {
+  width: 100%;
+  background-color: #d62828; /* rojo de marca */
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* top header */ 
+
+.top-header {
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: end;
+    gap: 20px;
+}
+
+.top-header {
+    /* ...existing code... */
+    padding-right: 40px; /* Ajusta el valor según lo que necesites */
+}
+
+.list-top-header {
+    display: flex;
+    align-items: end;
+    gap: 20px;
+}
+
+/* top-head li */
+
+.list-top-head li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+}
+
+.list-top-head li:not(:last-child)::after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 20px;
+  background: #fff; /* O el color que prefieras */
+  height: 40px;
+  margin-right: 10px;
+  align-self: center;
+}
+
+.list top header i {
+    color: white; 
+}
+
+/* navbar */
+.navbar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0;
+  width: 100%;
+  background-color: #d62828; /* rojo de marca */
+  color: white;
+}
+
+.nav-links a {
+  font-size: 1.8rem;        /* Solo los enlaces más grandes */
+  font-weight: 500;         /* Opcional: hacer el texto un poco más grueso */
+}
+
+.logo img {
+  height: 150px;
+  width: auto;
+  max-width: 1912px;
+  margin: 0;
+  display: block;
+}
+
+.nav-links {
+   display: flex; 
+   justify-content: flex-end; 
+   align-items: end;
+   gap: 20px;
+}
+
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0 40px; /* espacio a la derecha si quieres */
+  font-size: 1rem;
+}
+
+
+
+
+
+/* hero text */
+
+.hero {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  list-style: none; 
+  gap: 30px;
+  padding: 20px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* dos columnas iguales */
+  gap: 30px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* En móvil, cambiar a una columna */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+
+.hero .hero_text h1 {
+  font-family: 'MiDafont', 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  font-size: clamp(28px, 5vw, 48px); /* mínimo 28px, escala con viewport, máximo 48px */
+  line-height: 1.05;
+  color: #d62828;
+  margin: 0 0 0.6rem 0;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+.hero .hero_text p {
+  font-size: clamp(16px, 2.2vw, 20px);
+  color: #000000;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+/* Hero Buttons */
+.hero_button {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+
+/* Base button styles */
+.btn-primary, 
+.btn.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.2;
+  border: 2px solid #d62828;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 140px;
+  text-align: center;
+}
+
+/* Primary button */
+.btn-primary {
+  background: #d62828;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #b91f1f;
+  border-color: #b91f1f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(214, 40, 40, 0.3);
+}
+
+.btn-primary:focus {
+  outline: 2px solid #d62828;
+  outline-offset: 2px;
+}
+
+/* Secondary button */
+.btn.secondary {
+  background: transparent;
+  color: #d62828;
+}
+
+.btn.secondary:hover {
+  background: #d62828;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(214, 40, 40, 0.2);
+}
+
+.btn.secondary:focus {
+  outline: 2px solid #d62828;
+  outline-offset: 2px;
+}
+
+/* Active states */
+.btn-primary:active,
+.btn.secondary:active {
+  transform: translateY(0);
+  transition: all 0.1s ease;
+}
+
+/* Responsive buttons */
+@media (max-width: 768px) {
+  .hero_button {
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .btn-primary, 
+  .btn.secondary {
+    padding: 12px 20px;
+    font-size: 14px;
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero_button {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btn-primary, 
+  .btn.secondary {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* ========================
+   SECCIÓN PROMOCIONAL
+   ======================== */
+
+.promotional-banner {
+  background: #fff;              /* Fondo blanco */
+  padding: 40px 0;              /* Espaciado arriba y abajo */
+  border-bottom: 1px solid #eee; /* Línea sutil de separación */
+}
+
+.promotional-banner .container {
+  max-width: 1200px;            /* Ancho máximo */
+  margin: 0 auto;               /* Centrar */
+  padding: 0 20px;              /* Padding lateral */
+  text-align: center;           /* Centrar la imagen */
+}
+
+.promo-image {
+  width: 100%;                  /* Ancho completo del contenedor */
+  max-width: 100%;              /* No exceder el contenedor */
+  height: auto;                 /* Mantener proporción */
+  border-radius: 12px;          /* Esquinas redondeadas */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Sombra sutil */
+  transition: transform 0.3s ease; /* Transición suave */
+}
+
+.promo-image:hover {
+  transform: scale(1.02);       /* Zoom ligero al hacer hover */
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15); /* Sombra más marcada */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .promotional-banner {
+    padding: 20px 0;            /* Menos padding en móvil */
+  }
+  
+  .promotional-banner .container {
+    padding: 0 16px;            /* Menos padding lateral */
+  }
+  
+  .promo-image {
+    border-radius: 8px;         /* Esquinas menos redondeadas */
+  }
+}
+
+.promo-link {
+  display: block;
+  text-decoration: none;
+}
+
+.promo-link:hover .promo-image {
+  transform: scale(1.02);
+}
+
+
+/* Sección Our Foods */
+.our_foods {
+  background: #f8f9fa;           /* Fondo gris claro */
+  padding: 60px 0;              /* Espaciado vertical */
+}
+
+.our_foods h2 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: clamp(2rem, 4vw, 2.5rem);  /* Título responsivo */
+  font-weight: 700;
+  color: #d62828;               /* Color de marca */
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: -0.02em;
+}
+
+/* Grid responsive */
+.food_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;                    /* Espacio entre cards */
+  max-width: 1200px;           /* Ancho máximo */
+  margin: 0 auto;              /* Centrar el grid */
+  padding: 0 20px;             /* Padding lateral */
+}
+
+
+/* Card container */
+.food_card {
+  background: white;
+  border-radius: 12px;          /* Esquinas redondeadas */
+  overflow: hidden;             /* Evita que la imagen se salga */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);  /* Sombra sutil */
+  transition: all 0.3s ease;    /* Transición suave */
+}
+
+.food_card:hover {
+  transform: translateY(-8px);   /* Eleva la card al hacer hover */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);  /* Sombra más marcada */
+}
+
+/* Link dentro de la card */
+.food_card .card {
+  display: block;               /* Hace que todo el área sea clickeable */
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Contenedor de imagen */
+.food_image {
+  width: 100%;
+  height: 200px;               /* Altura fija para uniformidad */
+  overflow: hidden;            /* Corta la imagen si es muy grande */
+  position: relative;
+}
+
+.food_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           /* Mantiene proporción, corta si es necesario */
+  object-position: center;     /* Centra la imagen */
+  transition: transform 0.3s ease;
+}
+
+.food_card:hover .food_image img {
+  transform: scale(1.05);      /* Zoom ligero al hacer hover */
+}
+
+/* Contenido de texto */
+.food_card h3 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.25rem;          /* 20px */
+  font-weight: 600;
+  color: #333;
+  margin: 16px 20px 8px;       /* Margen: arriba, lados, abajo */
+  line-height: 1.3;
+}
+
+.food_card p {
+  font-size: 0.95rem;          /* 15.2px */
+  color: #666;
+  margin: 0 20px 20px;         /* Sin margen arriba, lados y abajo */
+  line-height: 1.4;
+}
+
+/* Ajustes para móvil */
+@media (max-width: 768px) {
+  .our_foods {
+    padding: 40px 0;           /* Menos padding vertical */
+  }
+  
+  .food_grid {
+    gap: 20px;                 /* Menos espacio entre cards */
+    padding: 0 16px;           /* Menos padding lateral */
+  }
+  
+  .food_image {
+    height: 180px;             /* Imágenes más pequeñas en móvil */
+  }
+}
+
+/* ========================
+   FOOTER HORIZONTAL
+   ======================== */
+
+/* Footer principal */
+.footer {
+  background: #2c3e50;          /* Fondo azul oscuro */
+  color: #ecf0f1;              /* Texto gris claro */
+  padding: 50px 0 0;           /* Padding arriba, sin padding abajo */
+}
+
+/* Contenedor del contenido principal - HORIZONTAL */
+.footer_content {
+  max-width: 1200px;           /* Ancho máximo */
+  margin: 0 auto;              /* Centrar */
+  padding: 0 20px 40px;        /* Padding lateral y abajo */
+  display: flex;               /* FLEXBOX para layout horizontal */
+  justify-content: space-between;  /* Distribuir espacios */
+  align-items: flex-start;     /* Alineación superior */
+  gap: 40px;                   /* Espacio entre columnas */
+  flex-wrap: wrap;             /* Permite wrap en pantallas pequeñas */
+}
+
+/* Sección About Us - más ancha */
+.footer_section.about {
+  flex: 2;                     /* Toma 2 partes del espacio disponible */
+  min-width: 280px;            /* Ancho mínimo */
+}
+
+/* Otras secciones - mismo ancho */
+.footer_section.links,
+.footer_section.contact,
+.footer_section.social {
+  flex: 1;                     /* Toma 1 parte del espacio disponible */
+  min-width: 180px;            /* Ancho mínimo */
+}
+
+/* Títulos de secciones */
+.footer_section h3 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.2rem;           /* 19.2px */
+  font-weight: 600;
+  color: #e74c3c;              /* Color rojo de marca */
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;    /* Mayúsculas */
+}
+
+/* Párrafos generales */
+.footer_section p {
+  font-size: 0.9rem;           /* 14.4px */
+  line-height: 1.6;
+  color: #bdc3c7;              /* Gris más claro para texto */
+  margin-bottom: 15px;
+}
+
+/* About Us - descripción */
+.footer_section.about p {
+  font-size: 0.95rem;          /* Ligeramente más grande */
+  line-height: 1.7;            /* Más espaciado para lectura */
+  color: #ecf0f1;              /* Texto más claro */
+  text-align: justify;         /* Justificado para párrafos largos */
+}
+
+/* Quick Links */
+.footer_section.links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer_section.links li {
+  margin-bottom: 12px;
+}
+
+.footer_section.links a {
+  color: #bdc3c7;              /* Color gris claro */
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  display: inline-block;        /* Para que funcione el transform */
+}
+
+.footer_section.links a:hover {
+  color: #e74c3c;              /* Color rojo al hacer hover */
+  transform: translateX(5px);   /* Mueve ligeramente a la derecha */
+  text-decoration: underline;
+}
+
+.footer_section.links a::before {
+  content: "→ ";               /* Flecha antes de cada enlace */
+  color: #e74c3c;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.footer_section.links a:hover::before {
+  transform: translateX(3px);   /* Mueve la flecha al hacer hover */
+}
+
+/* Información de contacto */
+.footer_section.contact p {
+  display: flex;
+  align-items: center;
+  gap: 10px;                   /* Espacio entre icono y texto */
+  margin-bottom: 10px;
+}
+
+.footer_section.contact p::before {
+  content: "✉";                /* Icono de email */
+  color: #e74c3c;
+  font-size: 1.1rem;
+}
+
+/* Redes sociales */
+.footer_section.social {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer_section.social a {
+  display: flex;
+  align-items: center;
+  gap: 12px;                   /* Espacio entre icono y texto */
+  color: #bdc3c7;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  padding: 8px 0;
+}
+
+.footer_section.social a:hover {
+  color: #e74c3c;
+  transform: translateY(-2px);  /* Eleva ligeramente */
+}
+
+.footer_section.social i {
+  font-size: 1.2rem;           /* Iconos más grandes */
+  width: 20px;                 /* Ancho fijo para alineación */
+  text-align: center;
+}
+
+/* Colores específicos para cada red social */
+.footer_section.social a[href*="twitter"]:hover {
+  color: #1da1f2;              /* Azul de Twitter */
+}
+
+.footer_section.social a[href*="facebook"]:hover {
+  color: #4267b2;              /* Azul de Facebook */
+}
+
+.footer_section.social a[href*="youtube"]:hover {
+  color: #ff0000;              /* Rojo de YouTube */
+}
+
+/* Línea inferior del footer */
+.footer_bottom {
+  background: #1a252f;         /* Más oscuro que el footer principal */
+  padding: 20px 0;
+  border-top: 1px solid #34495e; /* Línea sutil de separación */
+}
+
+.footer_bottom p {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 0.85rem;          /* Texto más pequeño */
+  color: #7f8c8d;              /* Gris más apagado */
+}
+
+/* ========================
+   RESPONSIVE FOOTER
+   ======================== */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .footer_content {
+    flex-direction: column;      /* Cambia a vertical en tablet */
+    gap: 30px;
+    text-align: left;
+  }
+  
+  .footer_section.about,
+  .footer_section.links,
+  .footer_section.contact,
+  .footer_section.social {
+    flex: none;                  /* Quita flex para que ocupen ancho completo */
+    min-width: auto;
+  }
+}
+
+/* Móvil */
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 0 0;
+  }
+  
+  .footer_content {
+    gap: 25px;
+    padding: 0 16px 30px;
+  }
+  
+  .footer_section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+  
+  .footer_section.social {
+    flex-direction: row;         /* Iconos en fila en móvil */
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .footer_bottom p {
+    font-size: 0.8rem;
+    padding: 0 16px;
+  }
+}
+  
+  .food_grid {
+    gap: 20px;                 /* Menos espacio entre cards */
+    padding: 0 16px;           /* Menos padding lateral */
+  }
+  
+  .food_image {
+    height: 180px;             /* Imágenes más pequeñas en móvil */
+  }
+
+
+/* Secciones del footer */
+.footer_section h3 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.2rem;           /* 19.2px */
+  font-weight: 600;
+  color: #e74c3c;              /* Color rojo de marca */
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;    /* Mayúsculas */
+}
+
+.footer_section p {
+  font-size: 0.9rem;           /* 14.4px */
+  line-height: 1.6;
+  color: #bdc3c7;              /* Gris más claro para texto */
+  margin-bottom: 15px;
+}
+
+/* About Us - descripción más larga */
+.footer_section.about p {
+  font-size: 0.95rem;          /* Ligeramente más grande */
+  line-height: 1.7;            /* Más espaciado para lectura */
+  color: #ecf0f1;              /* Texto más claro */
+  text-align: justify;         /* Justificado para párrafos largos */
+}
+
+/* Lista de enlaces rápidos */
+.footer_section.links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer_section.links li {
+  margin-bottom: 12px;
+}
+
+.footer_section.links a {
+  color: #bdc3c7;              /* Color gris claro */
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  display: inline-block;        /* Para que funcione el transform */
+}
+
+.footer_section.links a:hover {
+  color: #e74c3c;              /* Color rojo al hacer hover */
+  transform: translateX(5px);   /* Mueve ligeramente a la derecha */
+  text-decoration: underline;
+}
+
+.footer_section.links a::before {
+  content: "→ ";               /* Flecha antes de cada enlace */
+  color: #e74c3c;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.footer_section.links a:hover::before {
+  transform: translateX(3px);   /* Mueve la flecha al hacer hover */
+}
+
+
+/* Información de contacto */
+.footer_section.contact p {
+  display: flex;
+  align-items: center;
+  gap: 10px;                   /* Espacio entre icono y texto */
+  margin-bottom: 10px;
+}
+
+.footer_section.contact p::before {
+  content: "✉";                /* Icono de email */
+  color: #e74c3c;
+  font-size: 1.1rem;
+}
+
+/* Si quieres añadir más contactos */
+.footer_section.contact .phone::before {
+  content: "📞";               /* Icono de teléfono */
+}
+
+.footer_section.contact .address::before {
+  content: "📍";               /* Icono de ubicación */
+}
+
+/* Redes sociales */
+.footer_section.social {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer_section.social a {
+  display: flex;
+  align-items: center;
+  gap: 12px;                   /* Espacio entre icono y texto */
+  color: #bdc3c7;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  padding: 8px 0;
+}
+
+.footer_section.social a:hover {
+  color: #e74c3c;
+  transform: translateY(-2px);  /* Eleva ligeramente */
+}
+
+.footer_section.social i {
+  font-size: 1.2rem;           /* Iconos más grandes */
+  width: 20px;                 /* Ancho fijo para alineación */
+  text-align: center;
+}
+
+/* Colores específicos para cada red social */
+.footer_section.social a[href*="twitter"]:hover {
+  color: #1da1f2;              /* Azul de Twitter */
+}
+
+.footer_section.social a[href*="facebook"]:hover {
+  color: #4267b2;              /* Azul de Facebook */
+}
+
+.footer_section.social a[href*="youtube"]:hover {
+  color: #ff0000;              /* Rojo de YouTube */
+}
+
+
+/* Redes sociales */
+.footer_section.social {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer_section.social a {
+  display: flex;
+  align-items: center;
+  gap: 12px;                   /* Espacio entre icono y texto */
+  color: #bdc3c7;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  padding: 8px 0;
+}
+
+.footer_section.social a:hover {
+  color: #e74c3c;
+  transform: translateY(-2px);  /* Eleva ligeramente */
+}
+
+.footer_section.social i {
+  font-size: 1.2rem;           /* Iconos más grandes */
+  width: 20px;                 /* Ancho fijo para alineación */
+  text-align: center;
+}
+
+/* Colores específicos para cada red social */
+.footer_section.social a[href*="twitter"]:hover {
+  color: #1da1f2;              /* Azul de Twitter */
+}
+
+.footer_section.social a[href*="facebook"]:hover {
+  color: #4267b2;              /* Azul de Facebook */
+}
+
+.footer_section.social a[href*="youtube"]:hover {
+  color: #ff0000;              /* Rojo de YouTube */
+}
+
+/* Línea inferior del footer */
+.footer_bottom {
+  background: #1a252f;         /* Más oscuro que el footer principal */
+  padding: 20px 0;
+  border-top: 1px solid #34495e; /* Línea sutil de separación */
+}
+
+.footer_bottom p {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 0.85rem;          /* Texto más pequeño */
+  color: #7f8c8d;              /* Gris más apagado */
+}
